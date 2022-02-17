@@ -1,0 +1,18 @@
+{
+  "name": "backendrollingvet",
+  "version": "1.0.0",
+  "description": "Back End de RollingVet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "vet",
+    "fullstack",
+    "dog",
+    "cat"
+  ],
+  "author": "Brandino Cristian, Cortez D Elia Nicolas, Hidalgo Luciano, Lorenzetti Agustina, Marin Lujan, Toppa Maria Jose, Torres Juan Pablo",
+  "license": "ISC"
+}
