@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
+import path from "path";
 
 // creo una instancia de Express
 const app = express();
@@ -28,6 +29,10 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended:true}));
 
+
+//aquí mostramos el index.html de nuestra carpeta pública
+
+app.use(express.static(path.join(__dirname,"../public")))
 
 //ruta de prueba
 
