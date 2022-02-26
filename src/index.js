@@ -4,6 +4,7 @@ import cors from "cors";
 import path from "path";
 import routerPacientes from "./routes/pacientes.routes";
 import routerTurnos from "./routes/turnos.routes";
+import "./database"
 
 // creo una instancia de Express
 const app = express();
