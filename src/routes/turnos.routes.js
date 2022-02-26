@@ -11,6 +11,6 @@ const routerTurnos = Router();
 
 //creo la ruta
 
-routerTurnos.route("/turnos").get(turnosCtrl.listaTurnos)
+routerTurnos.route("/turnos").get(turnosCtrl.listaTurnos).post(turnosCtrl.crearTurno)
 
 export default routerTurnos;

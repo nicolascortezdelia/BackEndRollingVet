@@ -10,4 +10,10 @@ turnosCtrl.listaTurnos = (req, res)=>{
 
 };
 
+turnosCtrl.crearTurno = (req,res)=>{
+    res.send("Listo! se ha creado un nuevo Turno")
+
+
+}
+
 export default turnosCtrl;
