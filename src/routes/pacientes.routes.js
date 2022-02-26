@@ -8,7 +8,7 @@ import pacienteCtrl from "../controllers/pacientes.controllers";
 const routerPacientes = Router();
 
 //creo la ruta 
-routerPacientes.route("/adminPacientes").get(pacienteCtrl.listaPacientes);
+routerPacientes.route("/Clientes").get(pacienteCtrl.listaPacientes).post(pacienteCtrl.crearPaciente);
 
 
 export default routerPacientes;
