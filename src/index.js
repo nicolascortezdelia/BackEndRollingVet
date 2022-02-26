@@ -2,7 +2,8 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import path from "path";
-import router from "./routes/pacientes.routes";
+import routerPacientes from "./routes/pacientes.routes";
+import routerTurnos from "./routes/turnos.routes";
 
 // creo una instancia de Express
 const app = express();
@@ -37,5 +38,7 @@ app.use(express.static(path.join(__dirname,"../public")))
 
 //aquí van las rutas
 
-app.use("/apivet", router)
+app.use("/apivet", routerPacientes);
+
+app.use("/apivet", routerTurnos);
 

@@ -5,10 +5,10 @@ import pacienteCtrl from "../controllers/pacientes.controllers";
 
 //instancio o guardo a Router en una constante
 
-const router = Router();
+const routerPacientes = Router();
 
 //creo la ruta 
-router.route("/adminPacientes").get(pacienteCtrl.listaPacientes);
+routerPacientes.route("/adminPacientes").get(pacienteCtrl.listaPacientes);
 
 
-export default router;
+export default routerPacientes;
