@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import path from "path";
+import router from "./routes/pacientes.routes";
 
 // creo una instancia de Express
 const app = express();
@@ -34,18 +35,7 @@ app.use(express.urlencoded({extended:true}));
 
 app.use(express.static(path.join(__dirname,"../public")))
 
-//ruta de prueba
+//aquí van las rutas
 
-app.get("/adminPacientes", (req, res)=>{
-
-    res.send("hola, estoy en el BackEnd adminPacientes")
-
-});
-
-app.get("/adminTurnos", (req, res)=>{
-
-    res.send("hola, estoy en el BackEnd adminTurnos")
-
-});
-
+app.use("/apivet", router)
 
