@@ -10,7 +10,10 @@ turnosCtrl.listaTurnos = (req, res)=>{
 
 };
 
+//agregamos la función para CREAR un turno
+
 turnosCtrl.crearTurno = (req,res)=>{
+    console.log(req.body)
     res.send("Listo! se ha creado un nuevo Turno")
 
 

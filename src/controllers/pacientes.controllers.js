@@ -13,8 +13,8 @@ pacienteCtrl.listaPacientes = (req,res)=>{
 
 
 
-//agrego un nuevo método al OBjeto pacienteCtrl
 
+//agregamos la función para CREAR un nuevo objeto Paciente
 pacienteCtrl.crearPaciente = (req,res)=>{
     console.log(req.body)
     res.send("Listo! he creado un nuevo Paciente")
