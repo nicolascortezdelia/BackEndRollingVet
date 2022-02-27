@@ -23,8 +23,14 @@ const turnoSchema = new Schema({
 
     },
     TurnoFecha: {
-        required: [true, "la fecha es requerida"]
+        type: Date,
+        required: true
 
+    },
+
+    TurnoHora: {
+        type: Date,
+        required: true
     }
 
     
