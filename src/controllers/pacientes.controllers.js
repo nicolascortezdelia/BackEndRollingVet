@@ -1,3 +1,5 @@
+import PacienteModelo from "../models/pacientes";
+
 //aquí va la lógica
 
 const pacienteCtrl = {};

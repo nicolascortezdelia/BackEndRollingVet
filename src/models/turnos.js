@@ -22,12 +22,15 @@ const turnoSchema = new Schema({
         required: true
 
     },
-    TurnoFecha:{
-        unique: true,
-        required: true
+    TurnoFecha: {
+        required: [true, "la fecha es requerida"]
 
     }
+
+    
    
 });
 
 const TurnoModelo = mongoose.model("turno", turnoSchema);
+
+export default TurnoModelo;
