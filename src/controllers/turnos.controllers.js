@@ -18,7 +18,7 @@ turnosCtrl.crearTurno = async (req,res)=>{
         console.log(req.body)
         //validar todos los campos
 
-        //crear el producto en la base de datos
+        //crear el TURNO en la base de datos
 
         const turnoNuevo = new TurnoModelo({
             TurnoPetName: req.body.TurnoPetName,
