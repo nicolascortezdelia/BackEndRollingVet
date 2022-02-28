@@ -15,7 +15,7 @@
     "dog",
     "cat"
   ],
-  "author": "Brandino Cristian, Cortez D Elia Nicolas, Hidalgo Luciano, Lorenzetti Agustina, Marin Lujan, Toppa Maria Jose, Torres Juan Pablo",
+  "author": "Brandino Cristian, Cortez D Elia Nicolas, Hidalgo Luciano, Torres Juan Pablo",
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",

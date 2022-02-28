@@ -10,5 +10,9 @@ const routerPacientes = Router();
 //creo la ruta 
 routerPacientes.route("/Clientes").get(pacienteCtrl.listaPacientes).post(pacienteCtrl.crearPaciente);
 
+//creo una ruta para un paciente ÚNICO
+
+routerPacientes.route("/Clientes/:id").get(pacienteCtrl.obtenerPacienteUnico);
+
 
 export default routerPacientes;

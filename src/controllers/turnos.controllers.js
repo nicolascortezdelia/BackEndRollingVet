@@ -65,4 +65,25 @@ turnosCtrl.crearTurno = async (req,res)=>{
 
 }
 
+
+turnosCtrl.obtenerTurno = async (req, res)=>{
+    try {
+        console.log(req.params.id)
+
+        const turnoBuscado = await TurnoModelo.findById(req.params.id)
+
+        res.status(200).json(turnoBuscado);
+
+        
+    } catch (error) {
+        console.log(error)
+
+    //envío un código de error
+    res.status(404).json({
+        mensaje: "No se pudo encontrar el turno"
+    })
+        
+    }
+}
+
 export default turnosCtrl;
