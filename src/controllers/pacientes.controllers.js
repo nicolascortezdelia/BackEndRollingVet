@@ -6,10 +6,25 @@ const pacienteCtrl = {};
 
 //agregamos la lógica para obtener la lista de pacientes
 
-pacienteCtrl.listaPacientes = (req,res)=>{
+pacienteCtrl.listaPacientes = async (req,res)=>{
     //la lógica necesaria para obtener la Lista de Pacientes
+    try {
+        //crear un array para que guarde todos los pacientes que encuentre en la DB
+
+        const listaDeLosPacientes = await PacienteModelo.find();
+
+        res.status(200).json(listaDeLosPacientes);
+        
+    } catch (error) {
+        console.log(error)
+
+    //envío un código de error
+    res.status(404).json({
+        mensaje: "Error al intentar listar el paciente"
+    })
+        
+    }
     
-    res.send("hola desde el backend de pacientes")
     
 };
 

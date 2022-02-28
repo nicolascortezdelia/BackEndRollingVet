@@ -5,9 +5,23 @@ const turnosCtrl = {};
 
 //agregamos la lógica para OBTENER la lista de turnos
 
-turnosCtrl.listaTurnos = (req, res)=>{
+turnosCtrl.listaTurnos = async (req, res)=>{
     //la lógica necesaria para obtener la Lista de Turnos
-    res.send("hola desde el backend de turnos")
+   try {
+
+    const listaDeLosTurnos = await TurnoModelo.find();
+
+    res.status(200).json(listaDeLosTurnos);
+       
+   } catch (error) {
+    console.log(error)
+
+    //envío un código de error
+    res.status(404).json({
+        mensaje: "Error al intentar listar el turno"
+    })
+       
+   }
 
 };
 
