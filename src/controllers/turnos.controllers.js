@@ -1,4 +1,5 @@
 import TurnoModelo from "../models/turnos";
+import pacienteCtrl from "./pacientes.controllers";
 //aquí va la lógica
 
 const turnosCtrl = {};
@@ -82,6 +83,29 @@ turnosCtrl.obtenerTurno = async (req, res)=>{
     res.status(404).json({
         mensaje: "No se pudo encontrar el turno"
     })
+        
+    }
+};
+
+turnosCtrl.editarTurno = async (req, res)=>{
+    try {
+
+        console.log(req.params.id)
+
+        console.log(req.body)
+
+        await TurnoModelo.findByIdAndUpdate(req.params.id, req.body);
+
+        res.status(200).json({mensaje:"se editó correctamente el paciente"})
+        
+    } catch (error) {
+        console.log(error);
+
+        //envío un código de error
+        res.status(404).json({
+          mensaje: "No se pudo editar el paciente ",
+        });
+            
         
     }
 }
