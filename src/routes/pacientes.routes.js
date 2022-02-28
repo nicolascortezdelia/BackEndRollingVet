@@ -19,5 +19,6 @@ routerPacientes
   .route("/Clientes/:id")
   .get(pacienteCtrl.obtenerPacienteUnico)
   .put(pacienteCtrl.editarPaciente)
+  .delete(pacienteCtrl.borrarPaciente);
 
 export default routerPacientes;

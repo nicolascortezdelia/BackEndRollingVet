@@ -110,4 +110,24 @@ turnosCtrl.editarTurno = async (req, res)=>{
     }
 }
 
+
+turnosCtrl.borrarTurno = async (req, res)=>{
+    try {
+        await TurnoModelo.findByIdAndDelete(req.params.id);
+
+        res.status(200).json({mensaje:"se eliminaron correctamente los datos del turno"})
+        
+    } catch (error) {
+
+        console.log(error);
+
+    //envío un código de error
+    res.status(404).json({
+      mensaje: "Error al intentar borrar los datos del turno",
+    });
+        
+    }
+
+}
+
 export default turnosCtrl;

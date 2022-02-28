@@ -18,6 +18,7 @@ routerTurnos
 routerTurnos
   .route("/turnos/:id")
   .get(turnosCtrl.obtenerTurno)
-  .put(turnosCtrl.editarTurno);
+  .put(turnosCtrl.editarTurno)
+  .delete(turnosCtrl.borrarTurno);
 
 export default routerTurnos;
