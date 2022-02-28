@@ -76,6 +76,27 @@ pacienteCtrl.obtenerPacienteUnico = async (req, res) => {
       mensaje: "No se pudo obtener el paciente buscado",
     });
   }
-};
+}
+
+pacienteCtrl.editarPaciente = async (req,res)=>{
+    try {
+        console.log(req.params.id)
+
+        console.log(req.body)
+        //agregar validacion
+        await PacienteModelo.findByIdAndUpdate(req.params.id,req.body);
+        res.status(200).json({mensaje:"se editó correctamente el paciente"})
+
+    } catch (error) {
+        console.log(error);
+
+    //envío un código de error
+    res.status(404).json({
+      mensaje: "No se pudo editar el paciente ",
+    });
+        
+        
+    }
+}
 
 export default pacienteCtrl;
