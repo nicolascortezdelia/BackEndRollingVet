@@ -38,7 +38,7 @@ Las dependencias se instalarán automáticamente.
 
 🔗 🔗
 
-[Heroku](https://git.heroku.com/rollingvetbackend.git)
+[Heroku](https://rollingvetbackend.herokuapp.com/)
 
 Repositorio front-end: 
 
