@@ -2,7 +2,7 @@
 
 ## Proyecto de BackEnd Veterinaria RollingVet 💻
 
-_Proyecto realizado para una veterinaria ficticia,
+Proyecto realizado para una veterinaria ficticia,
 
 BackEnd utilizado para recibir y responder las peticiones del CRUD y el Login del FrontEnd
 
