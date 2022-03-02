@@ -42,7 +42,7 @@ Las dependencias se instalarán automáticamente.
 
 Repositorio front-end: 
 
-[Netlify](https://login.justucuman.gov.ar/login)
+[Netlify](https://rollingvetc18.netlify.app/)
 
 
 
