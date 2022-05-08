@@ -4,6 +4,7 @@ import cors from "cors";
 import path from "path";
 import routerPacientes from "./routes/pacientes.routes";
 import routerTurnos from "./routes/turnos.routes";
+import routerAdmin from "./routes/admin.routes";
 import "./database"
 
 // creo una instancia de Express
@@ -42,4 +43,6 @@ app.use(express.static(path.join(__dirname,"../public")))
 app.use("/apivet", routerPacientes);
 
 app.use("/apivet", routerTurnos);
+
+//app.use("/apivet", routerAdmin)
 
