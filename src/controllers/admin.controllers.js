@@ -1,4 +1,9 @@
 import AdminModelo from "../models/adminUser"
+import {
+
+    validateEmail,
+    validatePassword
+} from "../helpers/validaciones"
 const adminCtrl = {};
 
 adminCtrl.listarAdmin = async(req,res)=>{
@@ -25,15 +30,28 @@ adminCtrl.crearAdmin = (req, res)=>{
 
         // crearmos el admin
 
-        const nuevoAdmin = new AdminModelo({
+        const nuevoAdmin = new AdminModelo ({
             email: req.body.email,
             password: await bcrypt.hash(req.body.password, 10),
+        });
+        
+        await nuevoAdmin.save();
+
+        res.status(201).json({
+            mensaje: "Se creó un Administrador exitosamente"
         })
+
 
 
 
         
     } catch (error) {
+        console.log(error);
+        res.status(404).json({
+            mensaje: "Error al intentar crear el Administrador"
+        })
+        
+    
         
     }
 
