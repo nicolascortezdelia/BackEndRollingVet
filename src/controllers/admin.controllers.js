@@ -1,15 +1,17 @@
-import AdminModelo from "../models/adminUser"
+import AdminModelo from "../models/adminUser";
 import {
 
     validateEmail,
     validatePassword
 } from "../helpers/validaciones"
+
+
 const adminCtrl = {};
 
 adminCtrl.listarAdmin = async(req,res)=>{
     try{
         const listarAdmin = await AdminModelo.find();
-        res.status(200).json(listarUsuario);
+        res.status(200).json(listarAdmin);
     }catch(error){
         console.log(error);
         res.status(404).json({
@@ -18,7 +20,8 @@ adminCtrl.listarAdmin = async(req,res)=>{
     }
 }
 
-adminCtrl.crearAdmin = (req, res)=>{
+adminCtrl.crearAdmin = async (req, res)=>{
+
     try {
         // validaciones
         if(!validateEmail(req.body.email)|| !validatePassword(req.body.password)){
@@ -32,7 +35,7 @@ adminCtrl.crearAdmin = (req, res)=>{
 
         const nuevoAdmin = new AdminModelo ({
             email: req.body.email,
-            password: await bcrypt.hash(req.body.password, 10),
+            password: await bcrypt.hash(req.body.password, 10)
         });
         
         await nuevoAdmin.save();

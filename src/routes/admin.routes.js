@@ -1,11 +1,13 @@
 import { Router } from "express";
 import adminCtrl from "../controllers/admin.controllers";
 
-const routerAdmin = Router()
+const routerAdmin = Router();
 
-//crear la ruta 
+//crear la ruta
 
-routerAdmin.route("/admin").get(adminCtrl.listarAdmin).post(adminCtrl.crearAdmin);
+routerAdmin
+  .route("/admin")
+  .get(adminCtrl.listarAdmin)
+  .post(adminCtrl.crearAdmin);
 
-export default routerAdmin
-
+export default routerAdmin;
