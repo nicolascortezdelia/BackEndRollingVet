@@ -5,6 +5,10 @@ import {
     validatePassword
 } from "../helpers/validaciones"
 
+import bcrypt from "bcrypt"
+
+//
+
 
 const adminCtrl = {};
 
