@@ -44,5 +44,5 @@ app.use("/apivet", routerPacientes);
 
 app.use("/apivet", routerTurnos);
 
-//app.use("/apivet", routerAdmin)
+app.use("/apivet", routerAdmin)
 

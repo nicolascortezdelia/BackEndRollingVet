@@ -5,7 +5,7 @@ const routerAdmin = Router()
 
 //crear la ruta 
 
-routerAdmin.route("/admin").post(adminCtrl.crearAdmin)
+routerAdmin.route("/admin").get(adminCtrl.listarAdmin).post(adminCtrl.crearAdmin);
 
 export default routerAdmin
 
