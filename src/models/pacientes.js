@@ -19,12 +19,16 @@ const pacienteSchema = new Schema({
     },
     eMail:{
         type: String,
-        required: true
+        required: true,
+        minlength: 5,
+      maxlength: 25
 
     },
     telefono:{
         type: Number,
-        required: true
+        required: true,
+        minlength: 5,
+      maxlength: 25
 
 
     } ,

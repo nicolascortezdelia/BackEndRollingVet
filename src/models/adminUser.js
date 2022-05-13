@@ -4,7 +4,10 @@ const adminSchema = new Schema ({
   email:{
       type: String,
       unique:true,
-      required:true
+      required:true,
+      minlength: 5,
+      maxlength: 25
+
   },
 
   password:{
