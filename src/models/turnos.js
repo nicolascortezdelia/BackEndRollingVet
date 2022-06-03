@@ -23,7 +23,7 @@ const turnoSchema = new Schema({
 
     },
     TurnoFecha: {
-        type: String,
+        type: Date,
         required: true
 
     },
