@@ -59,6 +59,8 @@ export const validatePassword = (campo)=>{
 let date = new Date()
 let output = date.getFullYear()+ '-'+ `${(date.getMonth()+1)}`.padStart(2,'0') + '-' + `${(date.getDate())}`.padStart(2,'0') 
 
+//let output = date.getFullYear()+ '-'+ `${(date.getMonth()+1)}`.padStart(2,'0') + '-' + `${(date.getDate())}`.padStart(2,'0')
+
 
 
 export const validateFecha =(campo)=>{
