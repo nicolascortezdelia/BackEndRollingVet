@@ -3,7 +3,7 @@
 import mongoose, {Schema} from "mongoose";
 
 const turnoSchema = new Schema({
-    TurnoPetName:{
+    PetName:{
         type: String,
         maxlength: 23,
         minlength: 0,
@@ -11,30 +11,21 @@ const turnoSchema = new Schema({
 
 
     },
-    TurnoDoctor:{
+    Doctor:{
         type: String,
         maxlength: 200,
         required: true
 
     },
-    TurnoDetalle:{
+    Detalle:{
         type: String,
         required: true
 
     },
-    TurnoFecha: {
-        type: String,
-        required: true
-
-    },
-
-    TurnoHora: {
-        type: String,
+    horario: {
+        type: Number,
         required: true
     }
-
-    
-   
 });
 
 const TurnoModelo = mongoose.model("turno", turnoSchema);

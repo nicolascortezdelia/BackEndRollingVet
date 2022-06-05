@@ -9,9 +9,7 @@ const turnosCtrl = {};
 turnosCtrl.listaTurnos = async (req, res)=>{
     //la lógica necesaria para obtener la Lista de Turnos
    try {
-
     const listaDeLosTurnos = await TurnoModelo.find();
-
     res.status(200).json(listaDeLosTurnos);
        
    } catch (error) {
@@ -21,16 +19,15 @@ turnosCtrl.listaTurnos = async (req, res)=>{
     res.status(404).json({
         mensaje: "Error al intentar listar el turno"
     })
-       
    }
-
 };
 
-//agregamos la función para CREAR un turno
+// agregamos la función para CREAR un turno
+
+const formatDate = (timestamp) => new Date(timestamp).toDateString()
 
 turnosCtrl.crearTurno = async (req,res)=>{
     try {
-        console.log(req.body)
         //validar todos los campos
 
         //crear el TURNO en la base de datos
@@ -39,14 +36,22 @@ turnosCtrl.crearTurno = async (req,res)=>{
             TurnoPetName: req.body.TurnoPetName,
             TurnoDoctor: req.body.TurnoDoctor,
             TurnoDetalle: req.body.TurnoDetalle,
-            TurnoFecha: req.body.TurnoFecha,
-            TurnoHora: req.body.TurnoHora
+            horario: req.body.horario,
 
         })
 
-        //guardar en la base de datos
+        // validar turno
+        const turnoOcupado = await TurnoModelo.find({
+            TurnoDoctor: turnoNuevo.TurnoDoctor,
+            horario: turnoNuevo.horario,
+        });
 
-      await  turnoNuevo.save();
+        if (turnoOcupado) {
+            return res.status(404).json({mensaje: `Turno para las ${formatDate(turnoNuevo.horario)} ocupado` });
+        }
+
+        //guardar en la base de datos
+      await turnoNuevo.save();
 
       //enviar respuesta
       res.status(201).json({
@@ -90,9 +95,15 @@ turnosCtrl.obtenerTurno = async (req, res)=>{
 turnosCtrl.editarTurno = async (req, res)=>{
     try {
 
-        console.log(req.params.id)
+        // validar turno
+        const turnoOcupado = await TurnoModelo.find({
+            TurnoDoctor: req.body.TurnoDoctor,
+            horario: req.body.horario,
+        });
 
-        console.log(req.body)
+        if (turnoOcupado) {
+            return res.status(404).json({mensaje: `Turno para las ${formatDate(turnoNuevo.horario)} ocupado` });
+        }
 
         await TurnoModelo.findByIdAndUpdate(req.params.id, req.body);
 
@@ -105,8 +116,6 @@ turnosCtrl.editarTurno = async (req, res)=>{
         res.status(404).json({
           mensaje: "No se pudo editar el paciente ",
         });
-            
-        
     }
 }
 
