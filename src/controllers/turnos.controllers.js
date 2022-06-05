@@ -24,7 +24,7 @@ turnosCtrl.listaTurnos = async (req, res)=>{
 
 // agregamos la función para CREAR un turno
 
-const formatDate = (timestamp) => new Date(timestamp).toDateString()
+const formatDate = (timestamp) => new Date(timestamp).toDateString();
 
 turnosCtrl.crearTurno = async (req,res)=>{
     try {
