@@ -1,22 +1,16 @@
-// la misión de este archivo es mantener las rutas
+import { Router } from 'express';
 
-import { Router } from "express";
-
-import turnosCtrl from "../controllers/turnos.controllers";
-
-//guardo el Router en una constante
+import turnosCtrl from '../controllers/turnos.controllers';
 
 const routerTurnos = Router();
 
-//creo la ruta
-
 routerTurnos
-  .route("/turnos")
+  .route('/turnos')
   .get(turnosCtrl.listaTurnos)
   .post(turnosCtrl.crearTurno);
 
 routerTurnos
-  .route("/turnos/:id")
+  .route('/turnos/:id')
   .get(turnosCtrl.obtenerTurno)
   .put(turnosCtrl.editarTurno)
   .delete(turnosCtrl.borrarTurno);
