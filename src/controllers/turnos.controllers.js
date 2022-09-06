@@ -19,8 +19,6 @@ turnosCtrl.listaTurnos = async (req, res) => {
 
 turnosCtrl.crearTurno = async (req, res) => {
   try {
-    console.log(req.body);
-
     const turnoNuevo = new TurnoModelo({
       TurnoPetName: req.body.TurnoPetName,
       TurnoDoctor: req.body.TurnoDoctor,
@@ -45,8 +43,6 @@ turnosCtrl.crearTurno = async (req, res) => {
 
 turnosCtrl.obtenerTurno = async (req, res) => {
   try {
-    console.log(req.params.id);
-
     const turnoBuscado = await TurnoModelo.findById(req.params.id);
 
     res.status(200).json(turnoBuscado);
@@ -61,10 +57,6 @@ turnosCtrl.obtenerTurno = async (req, res) => {
 
 turnosCtrl.editarTurno = async (req, res) => {
   try {
-    console.log(req.params.id);
-
-    console.log(req.body);
-
     await TurnoModelo.findByIdAndUpdate(req.params.id, req.body);
 
     res.status(200).json({ mensaje: 'se editó correctamente el paciente' });

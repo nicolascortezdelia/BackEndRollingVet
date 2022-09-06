@@ -18,8 +18,7 @@ pacienteCtrl.listaPacientes = async (req, res) => {
 
 pacienteCtrl.crearPaciente = async (req, res) => {
   try {
-    console.log(req.body);
-
+    
     const pacienteNuevo = new PacienteModelo({
       nombre: req.body.nombre,
       apellido: req.body.apellido,
@@ -46,7 +45,7 @@ pacienteCtrl.crearPaciente = async (req, res) => {
 
 pacienteCtrl.obtenerPacienteUnico = async (req, res) => {
   try {
-    console.log(req.params.id);
+  
 
     const pacienteBuscado = await PacienteModelo.findById(req.params.id);
 
@@ -62,9 +61,7 @@ pacienteCtrl.obtenerPacienteUnico = async (req, res) => {
 
 pacienteCtrl.editarPaciente = async (req, res) => {
   try {
-    console.log(req.params.id);
-
-    console.log(req.body);
+    
 
     await PacienteModelo.findByIdAndUpdate(req.params.id, req.body);
     res.status(200).json({ mensaje: 'se editó correctamente el paciente' });
